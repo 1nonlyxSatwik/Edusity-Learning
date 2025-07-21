@@ -1,5 +1,5 @@
 import React from 'react';
-import './GraduationDegree.css';
+import './Graduationdegree.css';
 
 const GraduationDegree = () => {
   return (
