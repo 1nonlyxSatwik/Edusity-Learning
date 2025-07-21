@@ -1,0 +1,122 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Outfit", sans-serif;
+}
+
+.hero {
+  width: 100%;
+  min-height: 100vh;
+  background: url('../../assets/hero.png') no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+/* Frosted glass effect */
+.herotext {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 50px 40px;
+  max-width: 850px;
+  text-align: center;
+  color: #fff;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  animation: floatIn 1.5s ease-out forwards;
+  opacity: 0;
+}
+
+/* Heading */
+.herotext h1 {
+  font-size: clamp(2.5rem, 5vw, 4.2rem);
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #fff;
+  animation: fadeSlideIn 1.2s ease-out forwards;
+  opacity: 0;
+  letter-spacing: 1.5px;
+}
+
+/* Paragraph */
+.herotext p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 30px;
+  color: #e9f2ff;
+  animation: fadeInUp 1.2s ease-out 0.6s forwards;
+  opacity: 0;
+}
+
+/* Button */
+.btn {
+  background: linear-gradient(to right, #00e4ff, #3b82f6);
+  border: none;
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #000;
+  cursor: pointer;
+  transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
+  animation: fadeInUp 1s ease-out 1s forwards;
+  opacity: 0;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 255, 213, 0.4);
+  background: linear-gradient(to right, #3b82f6, #00e4ff);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .herotext h1 {
+    font-size: 2rem;
+  }
+
+  .herotext p {
+    font-size: 1rem;
+  }
+
+  .herotext {
+    padding: 35px 25px;
+  }
+}
+
+/* Animations */
+@keyframes fadeSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatIn {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

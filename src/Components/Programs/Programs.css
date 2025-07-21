@@ -1,0 +1,83 @@
+.programs {
+  margin: 80px auto;
+  width: 90%;
+  padding: 60px 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  background-color: #eef4ff;
+  border-radius: 20px;
+  scroll-margin-top: 100px;
+  position: relative;
+  flex-direction: row;
+}
+
+.programs-heading {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.programs-heading h2 {
+  font-size: 2.5rem;
+  color: #001F5B;
+  margin-bottom: 10px;
+}
+
+.programs-heading p {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+/* The core program block */
+.program {
+  flex-basis: 31%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  cursor: pointer;
+  color: inherit; /* For links, keep the text color consistent */
+  display: block;  /* Make sure links behave like blocks */
+}
+
+/* Remove default link underline */
+.program:link,
+.program:visited {
+  text-decoration: none;
+}
+
+/* Image inside program */
+.program img {
+  width: 100%;
+  border-radius: 10px;
+  display: block;
+}
+
+.caption {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 15, 152, 0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  opacity: 0;
+  transition: 0.4s ease;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  padding-top: 70%;
+}
+
+.caption img {
+  width: 60px;
+  margin-bottom: 10px;
+}
+
+/* Hover effect for div.program and link.program */
+.program:hover .caption {
+  opacity: 1;
+  padding-top: 0;
+}

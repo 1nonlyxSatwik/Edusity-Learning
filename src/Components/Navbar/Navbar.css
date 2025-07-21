@@ -1,0 +1,123 @@
+/* Full width nav with transparent blur background */
+.navbar {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 1000;
+  transition: all 0.3s ease-in-out;
+  padding: 12px 5%;
+  box-sizing: border-box;
+}
+
+/* Optional: Change background or shadow on scroll */
+.navbar.scrolled {
+  background: rgba(0, 0, 0, 0.75);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+}
+
+/* Center the nav content and flex space-between logo and nav */
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+.logo {
+  width: 160px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+/* Nav links container */
+.nav-links {
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  align-items: center;
+}
+
+/* Individual nav items */
+.nav-links li {
+  font-size: 16px;
+  position: relative;
+  padding: 5px 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: white;
+}
+
+/* Hover effect for nav items */
+.nav-links li:hover {
+  color: #00ffcc;
+  text-shadow: 0 0 5px #00ffcc;
+}
+
+/* Underline animation on hover */
+.nav-links li::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: #00ffcc;
+  left: 0;
+  bottom: 0;
+  transition: width 0.3s;
+}
+
+.nav-links li:hover::after {
+  width: 100%;
+}
+
+/* Button style for Contact Us link */
+.nav-links li .btn {
+  background: linear-gradient(to right, #00f2ff, #0047ff);
+  padding: 10px 20px;
+  border-radius: 30px;
+  color: white !important;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: inline-block;
+}
+
+.nav-links li .btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px #00f2ff80;
+}
+
+/* Responsive - stack nav vertically on smaller screens */
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .logo {
+    margin-bottom: 10px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: left;
+  }
+}

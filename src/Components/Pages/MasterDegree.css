@@ -1,0 +1,192 @@
+.master-degree-page {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom right, #e0f2fe, #f8fafc);
+  color: #0f172a;
+  overflow-x: hidden;
+}
+
+/* Navbar with glass effect */
+.md-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 3rem;
+  background: rgba(59, 130, 246, 0.8);
+  backdrop-filter: blur(10px);
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition: background 0.4s ease;
+}
+
+.md-links a {
+  margin: 0 1rem;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+.md-links a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background: #fde68a;
+  transition: width 0.3s ease-in-out;
+}
+.md-links a:hover::after {
+  width: 100%;
+}
+.md-links a:hover {
+  color: #fcd34d;
+}
+
+/* Hero Section */
+.md-hero {
+  padding: 6rem 2rem;
+  text-align: center;
+  background: radial-gradient(circle at top center, #3b82f6, #1e3a8a);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+.hero-title {
+  font-size: 3.2rem;
+  animation: fadeInDown 1s ease-out;
+  font-weight: bold;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+}
+.hero-subtitle {
+  margin-top: 1rem;
+  font-size: 1.3rem;
+  animation: fadeIn 1.5s ease-in;
+  opacity: 0.9;
+}
+.scroll-btn {
+  margin-top: 2rem;
+  padding: 0.8rem 2.2rem;
+  background: white;
+  color: #1e40af;
+  border: none;
+  border-radius: 999px;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+.scroll-btn:hover {
+  transform: translateY(-2px) scale(1.05);
+  background: #fcd34d;
+  color: #1e3a8a;
+}
+
+/* Sections */
+.md-section {
+  padding: 4.5rem 3rem;
+  text-align: center;
+  animation: fadeIn 1.5s ease forwards;
+}
+.md-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+.md-section h2::after {
+  content: '';
+  display: block;
+  margin: 0.5rem auto 0;
+  width: 60px;
+  height: 4px;
+  background: #60a5fa;
+  border-radius: 2px;
+}
+.md-section p {
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* Facts */
+.facts-list {
+  list-style: none;
+  padding: 0;
+  font-size: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.facts-list li {
+  background: #e0f2fe;
+  padding: 1rem 1.5rem;
+  border-left: 6px solid #3b82f6;
+  border-radius: 8px;
+  color: #0f172a;
+  transition: transform 0.3s ease;
+}
+.facts-list li:hover {
+  transform: translateX(10px);
+}
+
+/* Contact Button */
+.contact-btn {
+  margin-top: 2rem;
+  padding: 0.8rem 2rem;
+  background: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 999px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.4s ease, transform 0.2s ease;
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.15);
+}
+.contact-btn:hover {
+  background: #1e40af;
+  transform: translateY(-3px);
+}
+
+/* Footer */
+.md-footer {
+  background: #1e293b;
+  color: #dbeafe;
+  padding: 2rem;
+  text-align: center;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInDown {
+  0% { opacity: 0; transform: translateY(-40px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(40px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes slideInLeft {
+  0% { opacity: 0; transform: translateX(-60px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+@keyframes slideInRight {
+  0% { opacity: 0; transform: translateX(60px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+.fade-in { animation: fadeIn 1.2s ease forwards; }
+.fade-in-up { animation: fadeInUp 1.4s ease forwards; }
+.slide-in-left { animation: slideInLeft 1.4s ease forwards; }
+.fade-in-right { animation: slideInRight 1.4s ease forwards; }
