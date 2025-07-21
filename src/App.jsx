@@ -11,7 +11,7 @@ import Contact from './Components/Contact/Contact';
 import Footer from './Components/Footer/Footer';
 import VideoPlayer from './Components/VideoPlayer/VideoPlayer';
 import Post from './Components/Pages/postgraduation';
-import MasterDegree from './Components/Pages/Masterdegree';
+import MasterDegree from './Components/Pages/MasterDegree';
 import Preloader from './Components/Preloader';
 import GraduationDegree from './Components/Pages/Graduationdegree';
 
