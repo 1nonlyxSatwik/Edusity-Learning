@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import './preloader.css';
+import './Preloader.css';
 
 const Preloader = () => {
   const fullText = "Loading content. Please wait...";
@@ -14,7 +14,7 @@ const Preloader = () => {
       if (index === words.length) {
         clearInterval(interval);
       }
-    }, 400); // adjust timing as needed
+    }, 400); 
     return () => clearInterval(interval);
   }, []);
 
