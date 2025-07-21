@@ -13,7 +13,7 @@ import VideoPlayer from './Components/VideoPlayer/VideoPlayer';
 import Post from './Components/Pages/postgraduation';
 import MasterDegree from './Components/Pages/MasterDegree';
 import Preloader from './Components/Preloader';
-import GraduationDegree from './Components/Pages/Graduationdegree';
+import Graduationdegree from './Components/Pages/Graduationdegree';
 
 
 const App = () => {
@@ -22,7 +22,7 @@ const App = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 2000); // preloader duration in ms
+    }, 2000); 
     return () => clearTimeout(timer);
   }, []);
 
@@ -54,7 +54,7 @@ const App = () => {
   />
   <Route path="/postgraduation" element={<Post />} />
   <Route path="/masterdegree" element={<MasterDegree />} />
-  <Route path="/graduation" element={<GraduationDegree />} /> {/* ✅ ADD THIS */}
+  <Route path="/graduation" element={<Graduationdegree />} /> 
 </Routes>
 
     </BrowserRouter>

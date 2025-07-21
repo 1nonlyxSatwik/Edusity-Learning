@@ -19,7 +19,7 @@ const Preloader = () => {
   }, []);
 
   return (
-    <div className="preloader-container">
+    <div className="Preloader-container">
       <div className="animated-background">
         <div className="gradient-circle"></div>
         <div className="gradient-circle two"></div>
