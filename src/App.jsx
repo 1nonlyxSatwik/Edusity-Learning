@@ -1,63 +1,60 @@
-import React, { useEffect, useState } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import React, { useEffect } from 'react';
 import Navbar from './Components/Navbar/Navbar';
 import Hero from './Components/Herosection/Hero';
+import TrustBar from './Components/TrustBar/TrustBar';
 import Programs from './Components/Programs/Programs';
-import Title from './Components/Title/Title';
-import AboutUs from './Components/AboutUs/AboutUs';
-import Campus from './Components/Campus/Campus';
+import WhyChooseUs from './Components/AboutUs/AboutUs';
+import Features from './Components/Features/Features';
+import Statistics from './Components/Statistics/Statistics';
 import Testimonial from './Components/Testimonials/Testimonial';
-import Contact from './Components/Contact/Contact';
 import Footer from './Components/Footer/Footer';
-import VideoPlayer from './Components/VideoPlayer/VideoPlayer';
-import Post from './Components/Pages/postgraduation';
-import MasterDegree from './Components/Pages/MasterDegree';
-import Preloader from './Components/Preloader';
-import Graduationdegree from './Components/Pages/Graduationdegree';
 
+const CTA = () => (
+  <section className="cta-section">
+    <div className="container">
+      <div className="cta-card glass reveal">
+        <h2 className="text-gradient">Ready to Transform Your Career?</h2>
+        <p>Join over 50,000 students learning world-class skills today.</p>
+        <div className="cta-btns">
+          <button className="btn-primary">Get Started Now</button>
+          <button className="btn-secondary">Schedule a Call</button>
+        </div>
+      </div>
+    </div>
+  </section>
+);
 
 const App = () => {
-  const [isLoading, setIsLoading] = useState(true);
-
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 2000); 
-    return () => clearTimeout(timer);
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    const reveals = document.querySelectorAll('.reveal');
+    reveals.forEach(el => observer.observe(el));
+
+    return () => observer.disconnect();
   }, []);
 
-  if (isLoading) return <Preloader />;
-
   return (
-    <BrowserRouter>
-      <Routes>
-  <Route
-    path="/"
-    element={
-      <>
-        <Navbar />
-        <VideoPlayer />
-        <Hero />
-        <div className="container">
-          <Programs />
-          <AboutUs />
-          <Title subtitle="Gallery" title="Campus Photos" />
-          <Campus />
-          <Title subtitle="Testimonials" title="What Student Says" />
-          <Testimonial />
-          <Title subtitle="Contact Us" title="Get in Touch" />
-          <Contact />
-          <Footer />
-        </div>
-      </>
-    }
-  />
-  <Route path="/postgraduation" element={<Post />} />
-  <Route path="/masterdegree" element={<MasterDegree />} />
-  <Route path="/graduation" element={<Graduationdegree />} /> 
-</Routes>
-
-    </BrowserRouter>
+    <div className="app-wrapper">
+      <Navbar />
+      <Hero />
+      <TrustBar />
+      <div className="main-content">
+        <Programs />
+        <WhyChooseUs />
+        <Features />
+        <Statistics />
+        <Testimonial />
+        <CTA />
+        <Footer />
+      </div>
+    </div>
   );
 };
 

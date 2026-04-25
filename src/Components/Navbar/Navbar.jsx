@@ -1,42 +1,32 @@
+import React, { useState, useEffect } from 'react';
 import './Navbar.css';
-import React, { useEffect, useState } from 'react';
-import logo from '../../assets/logo.png';
 import { Link } from 'react-scroll';
 
 const Navbar = () => {
-  const [scrolled, setScrolled] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 50);
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
-    <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
-      <div className="nav-container">
-        <img src={logo} alt="EduSpark Logo" className="logo" />
+    <nav className={`navbar glass ${isScrolled ? 'scrolled' : ''}`}>
+      <div className="container nav-container">
+        <div className="logo-text">EduSity</div>
         <ul className="nav-links">
-          <li>
-            <Link to="hero" smooth={true} offset={0} duration={500}>Home</Link>
-          </li>
-          <li>
-            <Link to="program" smooth={true} offset={-260} duration={500}>Program</Link>
-          </li>
-          <li>
-            <Link to="about" smooth={true} offset={-150} duration={500}>About Us</Link>
-          </li>
-          <li>
-            <Link to="Testimonials" smooth={true} offset={-260} duration={500}>Testimonials</Link>
-          </li>
-          
-          <li>
-            <Link to="contact" smooth={true} offset={0} duration={500} className="btn">Contact Us</Link>
-          </li>
+          <li><Link to="hero" smooth={true} offset={0} duration={500}>Platform</Link></li>
+          <li><Link to="programs" smooth={true} offset={-80} duration={500}>Programs</Link></li>
+          <li><Link to="features" smooth={true} offset={-80} duration={500}>Features</Link></li>
+          <li><Link to="testimonials" smooth={true} offset={-80} duration={500}>Reviews</Link></li>
         </ul>
+        <div className="nav-btns">
+          <button className="btn-login">Log in</button>
+          <button className="btn-primary">Join now</button>
+        </div>
       </div>
     </nav>
   );
