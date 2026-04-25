@@ -1,0 +1,43 @@
+.trust-bar {
+  padding: 40px 0;
+  border-top: 1px solid var(--glass-border);
+  border-bottom: 1px solid var(--glass-border);
+  background: rgba(255, 255, 255, 0.01);
+  text-align: center;
+}
+
+.trust-bar p {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+}
+
+.logo-strip {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  font-size: 2.5rem;
+  color: var(--text-muted);
+  opacity: 0.5;
+}
+
+.logo-strip svg {
+  transition: var(--t-fast);
+}
+
+.logo-strip svg:hover {
+  color: var(--text-main);
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .logo-strip {
+    gap: 30px;
+    font-size: 1.8rem;
+    flex-wrap: wrap;
+  }
+}
