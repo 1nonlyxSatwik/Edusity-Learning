@@ -1,21 +1,23 @@
 import React from 'react';
 import './TrustBar.css';
-import { FaGoogle, FaAmazon, FaMicrosoft, FaApple, FaMeta } from 'react-icons/fa';
+import { motion } from 'framer-motion';
 
 const TrustBar = () => {
+  const logos = ['NVIDIA', 'GOOGLE', 'OPENAI', 'META', 'DEEPMIND', 'TESLA'];
+
   return (
-    <div className="trust-bar">
+    <section className="trust-bar">
       <div className="container">
-        <p>Trusted by students joining from top companies</p>
-        <div className="logo-strip">
-          <FaGoogle />
-          <FaAmazon />
-          <FaMicrosoft />
-          <FaApple />
-          <FaMeta />
+        <div className="trust-wrapper">
+          <p className="trust-label">Empowering Engineers at the World's Leading AI Labs</p>
+          <div className="logo-track">
+            {logos.concat(logos).map((logo, i) => (
+              <span key={i} className="trust-logo">{logo}</span>
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

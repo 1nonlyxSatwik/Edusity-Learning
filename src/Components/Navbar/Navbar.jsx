@@ -1,31 +1,24 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Navbar.css';
-import { Link } from 'react-scroll';
 
 const Navbar = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const navigate = useNavigate();
 
   return (
-    <nav className={`navbar glass ${isScrolled ? 'scrolled' : ''}`}>
-      <div className="container nav-container">
-        <div className="logo-text">EduSity</div>
-        <ul className="nav-links">
-          <li><Link to="hero" smooth={true} offset={0} duration={500}>Platform</Link></li>
-          <li><Link to="programs" smooth={true} offset={-80} duration={500}>Programs</Link></li>
-          <li><Link to="features" smooth={true} offset={-80} duration={500}>Features</Link></li>
-          <li><Link to="testimonials" smooth={true} offset={-80} duration={500}>Reviews</Link></li>
-        </ul>
-        <div className="nav-btns">
-          <button className="btn-login">Log in</button>
-          <button className="btn-primary">Join now</button>
+    <nav className="navbar glass">
+      <div className="container navbar-content">
+        <div className="logo" onClick={() => navigate('/')} style={{ cursor: 'pointer' }}>
+          <span className="accent-gradient">EduSpark</span>
+        </div>
+        <div className="nav-links">
+          <a href="#features">Product</a>
+          <a href="#roadmap">Roadmap</a>
+          <a href="#pricing">Pricing</a>
+        </div>
+        <div className="nav-actions">
+          <button className="btn btn-secondary" onClick={() => navigate('/login')}>Login</button>
+          <button className="btn btn-primary" onClick={() => navigate('/player')}>Try Free Lesson</button>
         </div>
       </div>
     </nav>

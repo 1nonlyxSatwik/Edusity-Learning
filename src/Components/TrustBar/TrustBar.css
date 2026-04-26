@@ -1,43 +1,50 @@
 .trust-bar {
   padding: 40px 0;
-  border-top: 1px solid var(--glass-border);
-  border-bottom: 1px solid var(--glass-border);
-  background: rgba(255, 255, 255, 0.01);
-  text-align: center;
+  background: var(--bg-deep);
+  border-bottom: 1px solid var(--border-glass);
 }
 
-.trust-bar p {
-  color: var(--text-muted);
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 30px;
-}
-
-.logo-strip {
+.trust-wrapper {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  gap: 60px;
-  font-size: 2.5rem;
+  gap: 32px;
+}
+
+.trust-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+.logo-track {
+  display: flex;
+  gap: 80px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+}
+
+.trust-logo {
+  font-size: 1.25rem;
+  font-weight: 800;
   color: var(--text-muted);
   opacity: 0.5;
+  white-space: nowrap;
+  letter-spacing: 0.1em;
+  animation: scroll-left 30s linear infinite;
 }
 
-.logo-strip svg {
-  transition: var(--t-fast);
-}
-
-.logo-strip svg:hover {
-  color: var(--text-main);
-  opacity: 1;
-  transform: scale(1.1);
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 @media (max-width: 768px) {
-  .logo-strip {
-    gap: 30px;
-    font-size: 1.8rem;
-    flex-wrap: wrap;
+  .logo-track {
+    gap: 40px;
   }
 }
