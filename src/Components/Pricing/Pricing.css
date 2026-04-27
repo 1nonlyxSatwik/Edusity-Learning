@@ -1,65 +1,108 @@
-.pricing-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+.pr-section {
+  padding: 120px 0;
 }
 
-.pricing-card {
-  padding: 3rem 2rem;
+.pr-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.pr-title {
+  font-size: var(--h2-size);
+}
+
+.pr-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.pr-card {
+  padding: 48px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-  transition: transform 0.3s;
+  position: relative;
 }
 
-.pricing-card:hover {
-  transform: scale(1.02);
+.pr-card.featured {
+  border-color: var(--primary-accent);
 }
 
-.pricing-card.featured {
-  border-color: var(--accent-blue);
-  background: rgba(59, 130, 246, 0.05);
+.card-badge {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background: var(--primary-accent);
+  color: #000;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 20px;
+  text-transform: uppercase;
 }
 
-.pricing-card h3 {
-  font-size: 1.25rem;
-  margin-bottom: 1.5rem;
-  color: var(--text-secondary);
+.plan-name {
+  font-size: 14px;
+  color: var(--text-muted);
+  font-weight: 600;
+  margin-bottom: 12px;
+  display: block;
 }
 
-.price {
-  margin-bottom: 2rem;
+.plan-price {
+  font-size: 48px;
+  font-weight: 600;
+  margin-bottom: 24px;
 }
 
-.amount {
-  font-size: 3rem;
-  font-weight: 800;
+.plan-price span {
+  font-size: 16px;
+  color: var(--text-muted);
 }
 
-.period {
-  color: var(--text-secondary);
+.plan-desc {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 32px;
 }
 
-.pricing-features {
+.plan-features {
   list-style: none;
-  margin-bottom: 3rem;
-  text-align: left;
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 48px;
+  flex: 1;
 }
 
-.pricing-features li {
-  margin-bottom: 0.75rem;
-  font-size: 0.9rem;
-  color: var(--text-secondary);
+.plan-features li {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
-.pricing-card .btn {
-  width: 100%;
+.plan-features li svg {
+  color: var(--primary-accent);
 }
 
-@media (max-width: 968px) {
-  .pricing-grid {
+.pr-btn {
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  font-weight: 600;
+  color: white;
+}
+
+.btn-accent {
+  background: var(--primary-accent);
+  border-color: var(--primary-accent);
+  color: #000;
+}
+@media (max-width: 768px) {
+  .pr-grid {
     grid-template-columns: 1fr;
   }
 }

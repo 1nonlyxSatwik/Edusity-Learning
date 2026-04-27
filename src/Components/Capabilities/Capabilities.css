@@ -1,0 +1,77 @@
+.cap-section {
+  background-color: #0d0d0d;
+  padding: 120px 0;
+}
+
+.cap-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: flex-start;
+}
+
+.cap-title {
+  font-size: var(--h2-size);
+  color: var(--text-primary);
+  line-height: 1.1;
+}
+
+.cap-right {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.cap-feat-card {
+  display: flex;
+  gap: 24px;
+  padding: 32px;
+  background: var(--surface-color);
+  border-radius: 16px;
+  transition: transform 0.3s ease;
+}
+
+.feat-icon-box {
+  width: 48px;
+  height: 48px;
+  background: rgba(245, 158, 11, 0.08);
+  border: 1px solid rgba(245, 158, 11, 0.15);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: var(--primary-accent);
+  flex-shrink: 0;
+}
+
+.feat-info h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.feat-info p {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+  max-width: 360px;
+}
+
+.feat-tags {
+  display: flex;
+  gap: 8px;
+}
+
+.feat-tag {
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  color: var(--text-muted);
+}
+@media (max-width: 991px) {
+  .cap-container {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}
